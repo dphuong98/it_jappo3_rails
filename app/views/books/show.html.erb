@@ -10,5 +10,12 @@
   <%= @book.number_of_pages %>
 </p>
 
+<% if @book.image.attached? %>
+  <image src="<%=(url_for(@book.image))%>">
+<%else%>
+  <p>No image</p>
+<%end%>
+<br>
+
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
