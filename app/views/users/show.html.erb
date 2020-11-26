@@ -1,4 +1,10 @@
 <h1>プロフィール</h1>
+<% if current_user.avatar.attached? %>
+  <image src="<%=(url_for(current_user.avatar))%>">
+<%else%>
+  <p>No image</p>
+<%end%>
+<br>
 <p>
     <%= current_user.name %><br>
     <h2>年齢</h2>
