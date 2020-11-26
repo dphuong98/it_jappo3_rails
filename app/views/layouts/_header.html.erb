@@ -1,0 +1,13 @@
+<p>
+<%= link_to "ホーム", "/" %>
+<% if user_signed_in? %>
+  <br>
+  こんにちは、<%= current_user.email %>
+  <br>
+  <%= link_to "サインアウト", "/users/sign_out" %>
+<% else %>
+  <%= link_to "サインイン", "/users/sign_in" %>
+  <%= link_to "ユーザ登録", "/users/sign_up" %>
+<% end %>
+</p>
+<hr>

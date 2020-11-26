@@ -1,15 +1,7 @@
-<% if user_signed_in? %>
-  <p>
-      こんにちは、<%= current_user.email %>
-      <br>
-      <%= link_to "サインアウト", "users/sign_out" %>
-  </p>
-<% else %>
-  <p>
-      <%= link_to "サインイン", "users/sign_in" %>
-      <%= link_to "ユーザ登録", "users/sign_up" %>
-  </p>
-<% end %>
-
-<hr>
 <h1>HOME PAGE</h1>
+
+<% if user_signed_in? %>
+<%= link_to "本一覧をみる", "books" %>
+<%else%>
+<%= link_to "本一覧をみる", "/users/sign_in" %>
+<%end%>
