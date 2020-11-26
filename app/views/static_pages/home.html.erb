@@ -1,7 +1,3 @@
 <h1>HOME PAGE</h1>
 
-<% if user_signed_in? %>
 <%= link_to "本一覧をみる", "books" %>
-<%else%>
-<%= link_to "本一覧をみる", "/users/sign_in" %>
-<%end%>
