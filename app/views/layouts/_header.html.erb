@@ -2,7 +2,7 @@
 <%= link_to "ホーム", "/" %>
 <% if user_signed_in? %>
   <br>
-  こんにちは、<%= current_user.email %>
+  こんにちは、<%= link_to current_user.name, "/users/show" %>
   <br>
   <%= link_to "サインアウト", "/users/sign_out" %>
 <% else %>
