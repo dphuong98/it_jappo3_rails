@@ -2,14 +2,7 @@ class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
   before_action :require_login
 
-  private
-
-  def require_login
-    unless user_signed_in?
-      flash[:error] = "You must be logged in to access this section"
-      redirect_to "/users/sign_in" # halts request cycle
-    end
-  end
+  
 
   # GET /books
   # GET /books.json
@@ -79,6 +72,13 @@ class BooksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def book_params
-      params.require(:book).permit(:title, :number_of_pages, :image)
+      params.require(:book).permit(:title, :number_of_pages, :detail, :image)
+    end
+    
+    def require_login
+      unless user_signed_in?
+        flash[:error] = "You must be logged in to access this section"
+        redirect_to "/users/sign_in" # halts request cycle
+      end
     end
 end

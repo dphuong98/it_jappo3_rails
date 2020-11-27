@@ -10,6 +10,11 @@
   <%= @book.number_of_pages %>
 </p>
 
+<p>
+  <strong>Details:</strong>
+  <%= @book.detail %>
+</p>
+
 <% if @book.image.attached? %>
   <image src="<%=(url_for(@book.image))%>">
 <%else%>
